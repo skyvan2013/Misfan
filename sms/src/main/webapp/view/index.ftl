@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript">
-        var a ;
+        var a;
     </script>
 
 </head>
 <body>
-    <input type="text" name="a" />
+
+<form method="get" action="/add">
+    类型名称： <input type="text" name="content" value="${(t.content)!}"/></br>
+    <input type="hidden"  name="version" value="${(t.version)!}"/>
+    <input type="hidden" name="id" value="${(t.id)!}">
+    <input type="submit" value="提交"/>
+</form>
 </body>
 </html>
