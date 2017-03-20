@@ -16,7 +16,7 @@ import javax.transaction.Transactional;
 public class BaseServiceImpl<T> implements BaseService<T> {
     Log log = LogFactory.getLog(BaseServiceImpl.class);
     @Resource
-    private BaseDao<T> baseDao;
+    private BaseDao baseDao;
 
 
 }

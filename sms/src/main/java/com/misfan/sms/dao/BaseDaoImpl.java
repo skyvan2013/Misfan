@@ -7,15 +7,21 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
+import java.io.Serializable;
 
 /**
  * Created by skyvan on 2016/8/15.
  */
 @Transactional
 @Repository
-public class BaseDaoImpl<T> implements BaseDao<T> {
+public class BaseDaoImpl implements BaseDao {
     private static Log log = LogFactory.getLog(BaseDaoImpl.class);
+
     @Resource
     HibernateTemplate hibernateTemplate;
 
+    @Override
+    public <T> T getEntity(Class<T> clazz, Serializable id) {
+        return hibernateTemplate.get(clazz, id);
+    }
 }
